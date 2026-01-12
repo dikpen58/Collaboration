@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.beautysalon.controllers.AdminMainController"
+      stylesheets="@../styles/styles.css">
+
+    <!-- Панель навигации -->
+    <HBox styleClass="nav-bar" spacing="20" alignment="CENTER_LEFT">
+        <Label text="Studio Mariana - Админ" styleClass="nav-title"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="Выход" onAction="#logout" styleClass="btn-danger"/>
+    </HBox>
+
+    <!-- Основной контент -->
+    <ScrollPane fitToWidth="true" style="-fx-background: transparent; -fx-border-color: transparent;">
+        <VBox fx:id="mainContainer" VBox.vgrow="ALWAYS"/>
+    </ScrollPane>
+
+</VBox>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.beautysalon.controllers.AuthController"
+            stylesheets="@../styles/styles.css">
+
+    <center>
+        <VBox alignment="CENTER" spacing="30">
+            <!-- Логотип -->
+            <VBox alignment="CENTER" spacing="10">
+                <Label text="💅" style="-fx-font-size: 60px;"/>
+                <Label text="Studio Mariana" styleClass="form-title"/>
+                <Label text="Салон красоты премиум-класса"
+                       style="-fx-font-size: 16px; -fx-text-fill: #666;"/>
+            </VBox>
+
+            <!-- Форма входа -->
+            <VBox styleClass="form-panel" spacing="20" prefWidth="400">
+                <!-- Простые кнопки-переключатели БЕЗ ToggleGroup -->
+                <HBox alignment="CENTER" spacing="0">
+                    <Button text="Вход" fx:id="loginTabButton"
+                            style="-fx-background-color: #8B008B; -fx-text-fill: white;
+                                  -fx-background-radius: 5 0 0 5; -fx-border-radius: 5 0 0 5;
+                                  -fx-border-width: 1; -fx-border-color: #8B008B;
+                                  -fx-padding: 10 30; -fx-font-weight: bold;"/>
+
+                    <Button text="Регистрация" fx:id="registerTabButton"
+                            style="-fx-background-color: #E0E0E0; -fx-text-fill: #666;
+                                  -fx-background-radius: 0 5 5 0; -fx-border-radius: 0 5 5 0;
+                                  -fx-border-width: 1; -fx-border-color: #8B008B;
+                                  -fx-padding: 10 30; -fx-font-weight: bold;"/>
+                </HBox>
+
+                <!-- Панель входа -->
+                <VBox fx:id="loginPane" spacing="20" style="-fx-padding: 20;">
+                    <Label text="Вход в систему"
+                           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+                    <VBox spacing="10">
+                        <Label text="Логин" styleClass="form-label"/>
+                        <TextField fx:id="loginUsername" promptText="Введите логин"/>
+
+                        <Label text="Пароль" styleClass="form-label"/>
+                        <PasswordField fx:id="loginPassword" promptText="Введите пароль"/>
+                    </VBox>
+
+                    <Button text="Войти" fx:id="loginButton" onAction="#handleLogin"
+                            styleClass="btn-primary" style="-fx-font-size: 16px;"/>
+                </VBox>
+
+                <!-- Панель регистрации -->
+                <VBox fx:id="registerPane" spacing="20" style="-fx-padding: 20;" visible="false">
+                    <Label text="Создание аккаунта"
+                           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+                    <VBox spacing="10">
+                        <Label text="Логин" styleClass="form-label"/>
+                        <TextField fx:id="registerUsername" promptText="Введите логин"/>
+
+                        <Label text="Пароль" styleClass="form-label"/>
+                        <PasswordField fx:id="registerPassword" promptText="Введите пароль"/>
+
+                        <Label text="Подтверждение пароля" styleClass="form-label"/>
+                        <PasswordField fx:id="registerConfirmPassword"
+                                       promptText="Повторите пароль"/>
+                    </VBox>
+
+                    <Button text="Зарегистрироваться" fx:id="registerButton"
+                            onAction="#handleRegister"
+                            styleClass="btn-secondary" style="-fx-font-size: 16px;"/>
+                </VBox>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

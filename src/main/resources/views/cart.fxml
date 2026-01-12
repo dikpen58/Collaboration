@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.beautysalon.controllers.CartController"
+      spacing="20"
+      style="-fx-padding: 30;"
+      stylesheets="@../styles/styles.css">
+
+    <Label text="🛒 Корзина покупок"
+           style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #8B008B;"/>
+
+    <Label text="Здесь находятся выбранные вами товары и услуги"
+           style="-fx-font-size: 14px; -fx-text-fill: #666;"/>
+
+    <TableView fx:id="cartTable" styleClass="table-view" prefHeight="350">
+        <columns>
+            <TableColumn fx:id="nameCol" text="Наименование" prefWidth="250"/>
+            <TableColumn fx:id="typeCol" text="Тип" prefWidth="100"/>
+            <TableColumn fx:id="priceCol" text="Цена" prefWidth="120"/>
+            <TableColumn fx:id="quantityCol" text="Кол-во" prefWidth="100"/>
+            <TableColumn fx:id="totalCol" text="Сумма" prefWidth="120"/>
+            <TableColumn fx:id="actionsCol" text="Действия" prefWidth="150"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Label fx:id="totalLabel" text="Итого к оплате: 0 руб."/>
+    </HBox>
+
+    <Separator/>
+
+    <HBox spacing="20" alignment="CENTER">
+        <Button fx:id="backButton" text="← Продолжить покупки"
+                onAction="#handleBack" styleClass="btn-secondary"/>
+        <Button fx:id="checkoutButton" text="💳 Перейти к оплате"
+                onAction="#handleCheckout" styleClass="btn-primary"
+                style="-fx-font-size: 16px; -fx-padding: 15 30;"/>
+    </HBox>
+
+</VBox>

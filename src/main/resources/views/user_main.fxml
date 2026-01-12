@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.beautysalon.controllers.UserMainController"
+      stylesheets="@../styles/styles.css">
+
+    <!-- Панель навигации -->
+    <HBox styleClass="nav-bar" spacing="20" alignment="CENTER_LEFT">
+        <Label text="Studio Mariana" styleClass="nav-title"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <HBox spacing="5" alignment="CENTER">
+            <Button fx:id="cartButton" text="🛒 Корзина" onAction="#openCart"
+                    styleClass="btn-secondary" style="-fx-min-width: 120px;"/>
+            <Label fx:id="cartCountLabel"
+                   style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white;
+                          -fx-background-color: #FF4081; -fx-padding: 5 10; -fx-background-radius: 10;"/>
+        </HBox>
+        <Button text="Выход" onAction="#logout" styleClass="btn-danger"/>
+    </HBox>
+
+    <!-- Основной контент -->
+    <ScrollPane fitToWidth="true" style="-fx-background: transparent; -fx-border-color: transparent;">
+        <VBox fx:id="mainContainer" VBox.vgrow="ALWAYS"/>
+    </ScrollPane>
+
+</VBox>

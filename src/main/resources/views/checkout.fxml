@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.beautysalon.controllers.CheckoutController"
+      spacing="25"
+      style="-fx-padding: 30;"
+      stylesheets="@../styles/styles.css">
+
+    <Label text="💳 Оформление заказа"
+           style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #8B008B;"/>
+
+    <VBox styleClass="form-panel" spacing="20">
+        <Label fx:id="itemsLabel" style="-fx-font-size: 14px; -fx-text-fill: #333;"/>
+
+        <Separator/>
+
+        <Label fx:id="totalLabel" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+        <Separator/>
+
+        <Label text="Адрес доставки:" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+        <TextArea fx:id="addressField" promptText="Введите полный адрес доставки..."
+                  prefRowCount="4" style="-fx-font-size: 14px;"/>
+
+        <Label text="📝 Укажите улицу, дом, квартиру, подъезд и код домофона"
+               style="-fx-font-size: 12px; -fx-text-fill: #666;"/>
+    </VBox>
+
+    <HBox spacing="20" alignment="CENTER">
+        <Button fx:id="cancelButton" text="Отмена"
+                onAction="#handleCancel" styleClass="btn-danger"/>
+        <Button fx:id="submitButton" text="✅ Подтвердить заказ"
+                onAction="#handleSubmit" styleClass="btn-success"
+                style="-fx-font-size: 16px; -fx-padding: 12 40;"/>
+    </HBox>
+
+</VBox>
